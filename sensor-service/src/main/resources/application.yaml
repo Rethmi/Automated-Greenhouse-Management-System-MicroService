@@ -1,14 +1,20 @@
-spring:
-  application:
-    name: sensor-service
-  config:
-    # Optional config server URL
-    import: "optional:configserver:http://localhost:8888"
+#spring:
+#  application:
+#        name: sensor-service
+#  config:
+#        import: "optional:configserver:http://localhost:8888"
 
-server:
-  # Change port to avoid conflicts
-  port: 8082
+        spring:
+          application:
+            name: sensor-service
+          config:
+            # Optional config server URL
+            import: "optional:configserver:http://localhost:8888"
 
-sensor:
-  fetch-rate: 5000
-  external-api-url: http://localhost:8082/mock-iot
+        server:
+          # Change port to avoid conflicts
+          port: 8082
+
+        sensor:
+          fetch-rate: 5000
+          external-api-url: http://localhost:8082/mock-iot
