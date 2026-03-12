@@ -10,6 +10,7 @@
         <module name="api-gateway" />
         <module name="config-server" />
         <module name="discovery-server" />
+        <module name="sensor-service" />
         <module name="zone-service" />
       </profile>
     </annotationProcessing>
@@ -19,6 +20,7 @@
       <module name="api-gateway" options="-parameters" />
       <module name="config-server" options="-parameters" />
       <module name="discovery-server" options="-parameters" />
+      <module name="sensor-service" options="-parameters" />
       <module name="zone-service" options="-parameters" />
     </option>
   </component>
