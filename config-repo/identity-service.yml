@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/agms_identity_db?createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/identifydb?createDatabaseIfNotExist=true
     username: root
     password: Ijse@1234
   jpa:
