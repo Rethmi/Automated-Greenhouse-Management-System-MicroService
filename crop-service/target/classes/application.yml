@@ -1,6 +1,45 @@
+##spring:
+##  application:
+##    name: crop-service
+##  cloud:
+##    config:
+##      import: "optional:configserver:http://localhost:8888"
+#spring:
+#  application:
+#    name: crop-service
+#
+#  cloud:
+#    config:
+#      import: optional:configserver:http://localhost:8888
+
+server:
+  port: 8084
+
 spring:
   application:
     name: crop-service
+
+  datasource:
+    url: jdbc:h2:mem:cropdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  h2:
+    console:
+      enabled: true
+
   cloud:
     config:
-      import: "optional:configserver:http://localhost:8888"
+      import: optional:configserver:http://localhost:8888
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
