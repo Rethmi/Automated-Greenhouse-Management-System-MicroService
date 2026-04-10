@@ -66,20 +66,25 @@ Start services in the following order:
 ### 📡 API Reference
 
    🔑 Identity Service
+
            POST /auth/register → Register user
            POST /auth/login → Generate JWT token
 
    📍 Zone Service
+
            POST /api/v1/zones → Create greenhouse zone
            GET /api/v1/zones → Get all zones
 
    🌡 Sensor Service
+
            GET /api/v1/sensors/latest → Get latest telemetry data
 
    🤖 Automation Service
+
            GET /api/v1/automation/logs → View triggered actions
 
    🌿 Crop Service
+
            POST /api/v1/crops → Add crop batch
            PUT /api/v1/crops/{id}/status → Update crop lifecycle stage
 
