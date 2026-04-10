@@ -1,0 +1,493 @@
+{
+  "info": {
+    "_postman_id": "9f3c2a41-7b6e-4d91-8c5a-2a8f7e9b1234",
+    "name": "AGMS - Microservice",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56789012"
+  },
+  "item": [
+    {
+      "name": "01. Identity Service",
+      "item": [
+        {
+          "name": "Request 01: Register User",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Rethmi\",\r\n    \"email\": \"rethmi@example.com\",\r\n    \"password\": \"1234\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Request 02: Login & Get Token",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Rethmi\",\r\n    \"password\": \"1234\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "02. Zone Service",
+      "item": [
+        {
+          "name": "Request 01: Create Zone",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBbmphbmEiLCJpYXQiOjE3NzMxNDU5MjQsImV4cCI6MTc3MzE0NzcyNH0.NaGsy0o9CUJSekbUeB3uKgzEaVOOgXGJtdJ7nQpT6BA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Tomato Zone\",\r\n    \"minTemp\": 22.0,\r\n    \"maxTemp\": 30.0\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/zones",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "zones"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Request 02: Get All Zones",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBbmphbmEiLCJpYXQiOjE3NzMxNDU5MjQsImV4cCI6MTc3MzE0NzcyNH0.NaGsy0o9CUJSekbUeB3uKgzEaVOOgXGJtdJ7nQpT6BA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/zones",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "zones"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Request 03: Get Zone by ID",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBbmphbmEiLCJpYXQiOjE3NzMxNDU5MjQsImV4cCI6MTc3MzE0NzcyNH0.NaGsy0o9CUJSekbUeB3uKgzEaVOOgXGJtdJ7nQpT6BA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/zones/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "zones",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Request 04: Update Zone Thresholds",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBbmphbmEiLCJpYXQiOjE3NzMxNDU5MjQsImV4cCI6MTc3MzE0NzcyNH0.NaGsy0o9CUJSekbUeB3uKgzEaVOOgXGJtdJ7nQpT6BA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Chillie\",\r\n    \"minTemp\": 25.0,\r\n    \"maxTemp\": 35.0\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/zones/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "zones",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Request 05: Delete Zone",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBbmphbmEiLCJpYXQiOjE3NzMxNDU5MjQsImV4cCI6MTc3MzE0NzcyNH0.NaGsy0o9CUJSekbUeB3uKgzEaVOOgXGJtdJ7nQpT6BA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/zones/4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "zones",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "03. Sensor Service",
+      "item": [
+        {
+          "name": "Request 01: Get Latest Telemetry",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBbmphbmEiLCJpYXQiOjE3NzMxNDU5MjQsImV4cCI6MTc3MzE0NzcyNH0.NaGsy0o9CUJSekbUeB3uKgzEaVOOgXGJtdJ7nQpT6BA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/sensors/latest",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "sensors",
+                "latest"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "04. Automation Service",
+      "item": [
+        {
+          "name": "Request 01: View Automation Logs",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBbmphbmEiLCJpYXQiOjE3NzMxNDU5MjQsImV4cCI6MTc3MzE0NzcyNH0.NaGsy0o9CUJSekbUeB3uKgzEaVOOgXGJtdJ7nQpT6BA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/automation/logs",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "automation",
+                "logs"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Request 02: Manual Process Test (Internal)",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBbmphbmEiLCJpYXQiOjE3NzMxNDU5MjQsImV4cCI6MTc3MzE0NzcyNH0.NaGsy0o9CUJSekbUeB3uKgzEaVOOgXGJtdJ7nQpT6BA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"deviceId\": \"0813bd57-0591-4b2c-9208-64c12edeaafe\",\r\n    \"zoneId\": \"2\",\r\n    \"value\": {\r\n        \"temperature\": 35.5,\r\n        \"humidity\": 60.0\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/automation/process",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "automation",
+                "process"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "05. Crop Service",
+      "item": [
+        {
+          "name": "Request 01: Register New Crop",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBbmphbmEiLCJpYXQiOjE3NzMxNDU5MjQsImV4cCI6MTc3MzE0NzcyNH0.NaGsy0o9CUJSekbUeB3uKgzEaVOOgXGJtdJ7nQpT6BA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"type\": \"Strawberry\",\r\n    \"batchName\": \"Batch-April-01\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/crops",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "crops"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Request 02: Update Crop Status",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBbmphbmEiLCJpYXQiOjE3NzMxNDU5MjQsImV4cCI6MTc3MzE0NzcyNH0.NaGsy0o9CUJSekbUeB3uKgzEaVOOgXGJtdJ7nQpT6BA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/crops/1/status?status=VEGETATIVE",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "crops",
+                "1",
+                "status"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "VEGETATIVE"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Request 03: View Inventory",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBbmphbmEiLCJpYXQiOjE3NzMxNDU5MjQsImV4cCI6MTc3MzE0NzcyNH0.NaGsy0o9CUJSekbUeB3uKgzEaVOOgXGJtdJ7nQpT6BA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/crops",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "crops"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
