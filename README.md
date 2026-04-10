@@ -1,7 +1,8 @@
-**🌿 Automated Greenhouse Management System (AGMS)**
-Microservice-Based Cloud-Native Application
+# 🌿 Automated Greenhouse Management System (AGMS)
 
-📌 **Overview**
+## Microservice-Based Cloud-Native Application
+
+### 📌 Overview
 
 The Automated Greenhouse Management System (AGMS) is a distributed microservices platform designed to modernize agriculture through real-time monitoring and automation.
 
@@ -9,7 +10,7 @@ It collects live environmental telemetry from IoT sensors, processes it using a 
 
 Built using a Spring Boot + Spring Cloud microservices architecture, AGMS ensures scalability, modularity, and fault isolation.
 
-**🛠 Tech Stack**
+### 🛠 Tech Stack
 
 *         Backend: Java 22, Spring Boot 3.5.11
 *         Microservices: Spring Cloud (Eureka, Config Server, API Gateway)
@@ -18,7 +19,7 @@ Built using a Spring Boot + Spring Cloud microservices architecture, AGMS ensure
 *         Database: MySQL (Polyglot persistence approach)
 *         Build Tool: Maven
 
-**🏗 Architecture Overview**
+### 🏗 Architecture Overview
 
 The system is divided into:
 
@@ -41,7 +42,7 @@ The system is divided into:
    | Crop Service       | 8084 | Manages crop lifecycle and inventory                   |
 
 
-   **🚀 Startup Sequence (Important)**
+### 🚀 Startup Sequence (Important)
 
 Start services in the following order:
 
@@ -55,13 +56,14 @@ Start services in the following order:
         Automation Service
         Crop Service
 
-   **🔐 Security & Integration**
+### 🔐 Security & Integration
+
        JWT Authentication: All external requests pass through API Gateway authentication filter.
        Service Protection: Only valid Bearer tokens can access secured endpoints.
        OpenFeign Communication: Used for inter-service communication (e.g., Automation → Zone Service).
        IoT Integration: Sensor Service consumes real-time data from external reactive IoT APIs.
 
-   **📡 API Reference**
+### 📡 API Reference
 
    🔑 Identity Service
            POST /auth/register → Register user
@@ -81,7 +83,7 @@ Start services in the following order:
            POST /api/v1/crops → Add crop batch
            PUT /api/v1/crops/{id}/status → Update crop lifecycle stage
 
-   **📂 Project Structure**
+### 📂 Project Structure
 
 The project follows a clean microservice architecture with separate repositories/modules per service.
 
@@ -100,7 +102,7 @@ This ensures:
         Maintainable architecture
 
 
-**📸 System Screenshots**
+### 📸 System Screenshot
 
 Eureka Dashboard
 
@@ -108,10 +110,12 @@ Displays all services registered and running in UP state.
 
 ![Eureka Dashboard](docs/screenshot.png)* 
 
-**✅ Features**
+
+
+### ✅ Features
 
 ✔ Microservices Architecture ✔ Service Discovery (Eureka) ✔ API Gateway Routing ✔ External IoT Integration ✔ Scheduled Data Fetching ✔ Rule Engine Automation ✔ MongoDB Integration ✔ Crop Lifecycle Management
 
-**👩‍💻 Author**
+### 👩‍💻 Author
 
 Sainsa Rethmi Thennakoon Graduate Diploma in Software Engineering – IJSE
